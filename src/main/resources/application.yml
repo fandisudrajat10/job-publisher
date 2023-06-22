@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: job-publisher
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/test_fandi?allowPublicKeyRetrieval=true&useSSL=false
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: root
+    password: my-secret-pw
+
+  jpa:
+    properties:
+      hibernate:
+        ddl-auto: create
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        hbm2ddl:
+          auto: none
+          create_namespaces: true
+          format_sql: true
+          jdbc:
+            batch_size: 50
+        jdbc:
+          batch_size: 50
+        jdbc_time_zone: UTC
+        show_sql: true
+        format_sql: true
+
+app:
+  jwtSecret: d81d5519-12ed-4aab-a385-a060520c0474
+  jwtExpirationMs: 3600000
+  apiKey: e489130a-fc47-11ed-be56-0242ac120002
